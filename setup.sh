@@ -423,12 +423,13 @@ main() {
   display_logo
   print_info "\nEnvironment setup script - devel mode\nAuthor : sb, nb0dy\n\nProceeding to create the standard directory structure\n"
   print_sep
-  temp_dir_location=$(mktemp -d)
-  create_std_dir "$temp_dir_location"
+  # for testing purposes
+  #temp_dir_location=$(mktemp -d)
+  create_std_dir "$HOME"
   print_info "\nStarting to install the terminal based programs\n"
   proceed_ops
   print_sep
-  setup_progs "$temp_dir_location"
+  setup_progs "$HOME"
   print_info "\nAll tasks completed - script execution ends here\n"
   print_sep
 }
