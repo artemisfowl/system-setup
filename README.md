@@ -54,3 +54,67 @@ I am a novice shell script writer. Please give it a look before executing the sc
 
 ##### Packages:
 * texlive-full (`aptitude`)
+
+### *Directory structure to be set by `setup script`*
+---
+$HOME/data/
+├── _code
+│   ├── _blender
+│   │   └── _animation_files
+│   ├── _commit
+│   │   ├── bitbucket
+│   │   │   ├── git
+│   │   │   └── hg
+│   │   └── github
+│   └── _test_bed
+│       ├── _skunkworks
+│       │   ├── _android
+│       │   ├── _eclipse
+│       │   ├── _intelli_j
+│       │   ├── _kern
+│       │   ├── _psp
+│       │   ├── _pycharm
+│       │   └── _venv
+│       │       ├── python2
+│       │       └── python3
+│       └── _standalone
+│           ├── asm
+│           ├── c
+│           ├── cpp
+│           ├── flex_bison
+│           ├── ipython_notebooks
+│           ├── java
+│           ├── javascript
+│           │   ├── angular
+│           │   ├── jquery
+│           │   └── node
+│           ├── misc
+│           ├── python2
+│           ├── python3
+│           ├── shell
+│           └── TeX
+├── _programs
+│   ├── _code_ref
+│   ├── _nix_execs
+│   └── _repo_clone
+│       ├── cvs
+│       ├── git
+│       ├── hg
+│       ├── svn
+│       └── wgetf
+└── _storage
+    ├── games
+    │   ├── AAA
+    │   └── indie
+    ├── misc
+    ├── mvc
+    ├── OS
+    ├── transmission
+    │   ├── games
+    │   ├── misc
+    │   ├── mvc
+    │   └── OS
+    └── youtube
+        ├── misc
+        ├── music_videos
+        └── tut_videos
