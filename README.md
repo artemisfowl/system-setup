@@ -57,6 +57,7 @@ I am a novice shell script writer. Please give it a look before executing the sc
 
 ### *Directory structure to be set by `setup script`*
 ---
+```
 $HOME/data/
 ├── _code
 │   ├── _blender
@@ -118,3 +119,4 @@ $HOME/data/
         ├── misc
         ├── music_videos
         └── tut_videos
+```
