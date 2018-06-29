@@ -354,6 +354,13 @@ install_ag() {
   print_sep
 }
 
+# function : setup_plugs_dots()
+# brief : function to set up the dot files as well as the vim plugins
+setup_plugs_dots() {
+  print_warning"$1"
+  # change the directory to the location where all the cloning will take place
+}
+
 # function : setup_progs()
 # brief : function to set up the programs based on priority and requirement
 setup_progs() {
@@ -415,6 +422,10 @@ setup_progs() {
     print_info "$pkg_name"
   done
   print_sep
+
+  # now copy and set up the vim plugins
+  dotfile_url="https://sayantan_bhattacharya@bitbucket.org/sayantan_bhattacharya/dotfiles.git"
+  # call the function for setting up the dotfiles and plugins
 }
 
 # function : main()
