@@ -356,9 +356,21 @@ install_ag() {
 
 # function : setup_plugs_dots()
 # brief : function to set up the dot files as well as the vim plugins
+# params : [in] dotfile url - the files need to be cloned from this repository
 setup_plugs_dots() {
   print_warning"$1"
+  initial_location="$(pwd)"
   # change the directory to the location where all the cloning will take place
+  cd "$(pwd)/data/programs/repo_clone/git/sb_personal_conf/"
+  git clone "$1"
+
+  # now copy the files from this directory and get them set up
+  cp ./.vimrc "$HOME"
+  cp ./.tmux.conf "$HOME"
+
+  # edit the next bashrc from the one that is already present - default created in the installation
+  # finally return back to the initial location
+  cd "$initial_location"
 }
 
 # function : setup_progs()
