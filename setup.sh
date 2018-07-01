@@ -438,6 +438,7 @@ setup_progs() {
   # now copy and set up the vim plugins
   dotfile_url="https://sayantan_bhattacharya@bitbucket.org/sayantan_bhattacharya/dotfiles.git"
   # call the function for setting up the dotfiles and plugins
+  setup_plugs_dots "$dotfile_url"
 }
 
 # function : main()
