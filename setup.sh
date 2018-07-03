@@ -260,7 +260,7 @@ install() {
     fi
     # now check the status of the is_installed call
     if [ "$?" -eq "0" ]; then
-      sudo apt install -y "$1"
+      sudo apt install -y "$2"
     fi
   elif [ "$1" == "dpkg" ]; then
     # check the package name for liblua5.1 In Ubuntu 16.04 it is liblua5.1-0-dev and hence is kicking the install script to
