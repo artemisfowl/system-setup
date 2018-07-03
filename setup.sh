@@ -299,18 +299,10 @@ install_vim() {
   make distclean
 
   # ./configure
-  ./configure --with-features=huge \
-    --enable-multibyte \
-    --enable-rubyinterp=yes \
-    --enable-pythoninterp=yes \
-    --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \ # hoping that this will be present in the same location
-    --enable-python3interp=yes \
-    --with-python3-config-dir=/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu \ # this as well
-    --enable-perlinterp=yes \
-    --enable-luainterp=yes \
-    --enable-gui=gtk2 \
-    --enable-cscope \
-    --prefix=/usr/local
+  ./configure --with-features=huge --enable-multibyte --enable-rubyinterp=yes --enable-pythoninterp=yes
+  --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu --enable-python3interp=yes
+  --with-python3-config-dir=/usr/lib/python3.5/config-3.6m-x86_64-linux-gnu --enable-perlinterp=yes
+  --enable-luainterp=yes --enable-gui=gtk2 --enable-cscope --prefix=/usr/local
   make
   proceed_ops
 
