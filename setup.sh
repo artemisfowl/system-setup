@@ -18,9 +18,9 @@
 BASHRC_LOCATION="$HOME/.bashrc"
 
 # brief : setting up the colors to be used
-color_1="\e[1;37;5;227m"
-color_2="\e[1;31;5;227m"
-color_3="\e[1;33;5;227m"
+color_1="\e[1;37m"
+color_2="\e[1;31m"
+color_3="\e[1;33m"
 
 # brief : for logging purposes
 LOG_WARNING=$color_1
@@ -100,7 +100,8 @@ check_color_support() {
 }
 
 # function : display_logo()
-# brief : this function will display a snazzy logo for the Ubuntu systems provided 256 color support is enabled in the terminal
+# brief : this function will display a snazzy logo for the Ubuntu systems provided 256 color support is enabled in the
+# terminal
 display_logo() {
   # first check if 256 color support is enabled or not
   # if not enabled - enable it
@@ -298,11 +299,8 @@ install_vim() {
   make clean
   make distclean
 
-  # ./configure
-  ./configure --with-features=huge --enable-multibyte --enable-rubyinterp=yes --enable-pythoninterp=yes
-  --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu --enable-python3interp=yes
-  --with-python3-config-dir=/usr/lib/python3.5/config-3.6m-x86_64-linux-gnu --enable-perlinterp=yes
-  --enable-luainterp=yes --enable-gui=gtk2 --enable-cscope --prefix=/usr/local
+  # Configure Vim before starting the compilation
+  ./configure --with-features=huge --enable-multibyte --enable-rubyinterp=yes --enable-pythoninterp=yes --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu --enable-python3interp=yes --with-python3-config-dir=/usr/lib/python3.5/config-3.6m-x86_64-linux-gnu --enable-perlinterp=yes --enable-luainterp=yes --enable-gui=gtk2 --enable-cscope --prefix=/usr/local
   make
   proceed_ops
 
@@ -352,8 +350,10 @@ install_ag() {
 setup_plugs_dots() {
   print_warning"$1"
   initial_location="$(pwd)"
+  desired_location="$(pwd)/data/programs/repo_clone/git/sb_personal_conf/"
   # change the directory to the location where all the cloning will take place
-  cd "$(pwd)/data/programs/repo_clone/git/sb_personal_conf/"
+  mkdir -p "$dedsired_location"
+  cd "$desired_location"
   git clone "$1"
 
   # now copy the files from this directory and get them set up
@@ -415,7 +415,8 @@ setup_progs() {
       install_vim "${vim_deps[@]}"
       print_warning "Vim will be installed\n"
     elif [ "$prog_name" == "ag" ]; then
-      install_ag "${ag_deps[@]}"
+      install_ag "${ag_deps[@]}" # there is some problem with the liblzma portion - have to check it
+      print_warning "Silversearcher-ag will be installed\n"
     fi
   done
   print_sep
@@ -448,6 +449,10 @@ main() {
   setup_progs "$HOME"
   print_info "\nAll tasks completed - script execution ends here\n"
   print_sep
+
+  # Start adding the function for setting up the minimal vimrc and other configurations
+  # Also add the installation of urxvt to the list of applications
+  # Try to setup the key combinations for installed applications
 }
 
 #-----------------------------------------------------------------------------------
